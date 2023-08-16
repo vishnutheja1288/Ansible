@@ -1,0 +1,13 @@
+---
+- name: iteration over a list of hashes
+  hosts: webservers
+  become: true
+  tasks:
+    - name: add users
+      ansible.builtin.user:
+        name: "{{item.name}}"
+        state: present
+        groups: "{{ item.groups }}"
+      loop:
+        - { name: 'testuser4', groups: 'root' }
+        - { name: 'testuser5', groups: 'root' }

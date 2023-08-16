@@ -1,0 +1,15 @@
+---
+- name: index with ansible loop
+  become: true
+  hosts: webservers
+  tasks:
+  - name: index with ansible loop 
+    debug:
+      msg: "the car at {{item.0}} is {{ item.1 }}"
+    with_indexed_items:
+      - "Toyota"
+      - "Kia"
+      - "BMW"
+      - "Mercedes"
+      - "Tata"
+      - "Mahendra"

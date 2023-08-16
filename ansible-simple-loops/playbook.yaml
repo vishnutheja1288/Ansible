@@ -1,0 +1,15 @@
+---
+- name: ansible loop test
+  hosts: webservers
+  become: true
+  tasks:
+    - name: add users
+      ansible.builtin.user:
+#     user:
+        name: "{{ item }}"
+# item is loop in Ansible
+        state: present
+      loop:
+        - testuser1
+        - testuser2
+        - testuser3  

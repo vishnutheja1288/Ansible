@@ -1,0 +1,9 @@
+---
+- name: devops ansible variable declaration
+  hosts: webservers
+  vars:
+    title: welcome to vishnutheja
+  tasks:
+    - name: ansible playbook variable defination example
+      debug:
+        msg: "{{ title }}"

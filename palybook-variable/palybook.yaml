@@ -1,0 +1,9 @@
+---
+- name: Setting up apache webserver
+  hosts: webservers
+  become: true
+
+  tasks:
+    - include_vars: vars.yaml
+    - name: install httpd
+      yum: name={{ package_name }} update_cache=yes state=latest

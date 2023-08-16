@@ -1,0 +1,14 @@
+---
+- name: iteration over dictionary
+  become: true
+  hosts: webservers
+  tasks:
+    - name: using dict2items
+      debug:
+        msg:
+          - "The user {{ item.key }} is a {{ item.value }}" 
+      loop: "{{ user_types | dict2items }}"
+      vars:
+        user_types:
+          Environment: dev
+          Payment: Applicaton

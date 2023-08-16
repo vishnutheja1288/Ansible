@@ -1,0 +1,7 @@
+---
+- name: setup an apache webserver
+  hosts: webserver
+  become: true
+  tasks:
+    - name: install httpd
+      yum: name=httpd update_cache=yes state=absent

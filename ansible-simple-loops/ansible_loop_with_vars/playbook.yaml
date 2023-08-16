@@ -1,0 +1,12 @@
+---
+- name: loop test using with item
+  hosts: webservers
+  become: true
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: perform package deployments
+      package:
+        name: "{{ item.name }}"
+        state: "{{item.state}}"
+      with_items: "{{package_names}}"
