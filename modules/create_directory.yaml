@@ -1,0 +1,9 @@
+---
+- name: create directory using ansible
+  hosts: webserver
+  become: true
+  tasks:
+  - name: create a directory
+    command: mkdir /home/ansible/test creates=/home/ansible/test
+    register: module
+  - debug: msg="{{module.stdout}}"

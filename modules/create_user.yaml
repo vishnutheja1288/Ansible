@@ -1,0 +1,9 @@
+---
+- name: create user using ansible playbook
+  hosts: webservers
+  become: true
+  tasks:
+  - name: create user
+    user:
+      name: demo
+      state: present
