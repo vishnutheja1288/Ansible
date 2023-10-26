@@ -29,7 +29,9 @@ $ ansilbe <hostgroup> -m shell -a "ps -eo pid,ppid,%mem,%cpu,cmd,--sort=-%mem | 
 
 -------------------------------
 INVENTORY: list of host of group of hosts : /etc/ansbile/hosts
+
 MODULES: programs that perform the actual work of the task of a play. These modules was used under task session in our playbook
+
 TASKS: set of instructions which can be performed by using modules so in the task we useually called modules
 
 
@@ -45,7 +47,9 @@ install apache in unbuntu
 
 
 $ansible-playbook playbook.yaml --check
+
 $ ansible-playbook palybook.yaml
+
 $ ansible-palybook -i <inventoryfile> playbook.yaml
 
 
